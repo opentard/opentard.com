@@ -3,162 +3,238 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenTard - Lightweight Autonomous AI Agent</title>
-  <meta name="description" content="A lightweight OpenClaw alternative. OpenRouter by default, standalone auth proxies so AI never touches your credentials.">
+  <title>OpenTard — Uncensored AI Agent Orchestration</title>
+  <meta name="description" content="The uncensored autonomous AI orchestration layer. Route to 300+ LLMs via OpenRouter at zero markup. Auth proxies keep credentials out of AI context.">
+  <meta property="og:title" content="OpenTard — Uncensored AI Agent Orchestration">
+  <meta property="og:description" content="Orchestrate any model. Zero censorship. Zero waste. Your models, your rules.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://opentard.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='30' ry='22' fill='%231a3a4a' stroke='%232dd4bf' stroke-width='3'/><circle cx='44' cy='44' r='3' fill='%23e2e8f0'/><circle cx='56' cy='44' r='3' fill='%23e2e8f0'/><path d='M44 56 Q50 60 56 56' fill='none' stroke='%232dd4bf' stroke-width='2'/></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><ellipse cx='50' cy='50' rx='30' ry='22' fill='%23071a0f' stroke='%2300ff88' stroke-width='3'/><circle cx='44' cy='44' r='3' fill='%23e0e0e0'/><circle cx='56' cy='44' r='3' fill='%23e0e0e0'/><path d='M44 56 Q50 60 56 56' fill='none' stroke='%2300ff88' stroke-width='2'/></svg>">
 </head>
 <body>
 
-  <!-- WebGL Background -->
   <canvas id="webgl-canvas"></canvas>
 
-  <!-- Navigation -->
   <nav>
-    <a href="#" class="nav-brand">
-      <svg viewBox="0 0 200 160" width="28" height="22">
-        <ellipse cx="100" cy="75" rx="50" ry="38" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="3"/>
-        <ellipse cx="100" cy="42" rx="18" ry="15" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="3"/>
-        <circle cx="93" cy="39" r="3" fill="#e2e8f0"/><circle cx="107" cy="39" r="3" fill="#e2e8f0"/>
-        <path d="M95 46 Q100 50 105 46" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-      OpenTard
-    </a>
-    <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#architecture">Architecture</a></li>
-      <li><a href="#get-started">Get Started</a></li>
-      <li><a href="https://github.com/opentard" class="btn btn-secondary" style="padding:0.4rem 1rem;font-size:0.85rem;">GitHub</a></li>
-    </ul>
-    <button class="nav-toggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 200 160" width="24" height="19">
+          <ellipse cx="100" cy="75" rx="50" ry="38" fill="#071a0f" stroke="#00ff88" stroke-width="4"/>
+          <ellipse cx="100" cy="42" rx="18" ry="15" fill="#071a0f" stroke="#00ff88" stroke-width="4"/>
+          <circle cx="93" cy="39" r="3" fill="#e0e0e0"/><circle cx="107" cy="39" r="3" fill="#e0e0e0"/>
+          <path d="M95 46 Q100 50 105 46" fill="none" stroke="#00ff88" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">OpenTard</span>
+        <span class="logo-ver">v0.1</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#manifesto">Manifesto</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#get-started">Get Started</a></li>
+        <li><a href="https://github.com/opentard" class="nav-gh">GitHub &#8599;</a></li>
+      </ul>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <canvas id="tardigrade-canvas" class="hero-mascot-3d"></canvas>
-    <noscript><img src="img/tardigrade.svg" alt="OpenTard mascot" class="hero-mascot"></noscript>
-    <h1>Open<span>Tard</span></h1>
-    <p class="tagline">A lightweight autonomous AI agent. Your keys stay yours.</p>
-    <div class="btn-group">
-      <a href="#get-started" class="btn btn-primary">Get Started</a>
-      <a href="https://github.com/opentard" class="btn btn-secondary">GitHub</a>
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">AUTONOMOUS AI ORCHESTRATION</div>
+        <h1>Orchestrate Any&nbsp;Model.<br><span class="gl">Zero Censorship.</span><br>Zero Waste.</h1>
+        <p class="hero-sub">The uncensored agentic AI layer. Route to 300+ LLMs through OpenRouter at bare-metal pricing. Standalone auth proxies keep credentials completely out of AI context.</p>
+        <div class="hero-cta">
+          <a href="#get-started" class="btn btn-primary">Get Started</a>
+          <a href="https://github.com/opentard" class="btn btn-ghost">View on GitHub <span class="arrow">&rarr;</span></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <canvas id="tardigrade-canvas"></canvas>
+        <noscript><img src="img/tardigrade.svg" alt="OpenTard" class="hero-mascot"></noscript>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat fade-in">
+        <span class="stat-value" data-count="300">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Models</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-value">$0</span>
+        <span class="stat-label">Platform Fee</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-value">Zero</span>
+        <span class="stat-label">Content Filters</span>
+      </div>
+      <div class="stat fade-in">
+        <span class="stat-value">100%</span>
+        <span class="stat-label">Credential Isolation</span>
+      </div>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <!-- Manifesto -->
+  <section id="manifesto" class="manifesto">
+    <h2 class="section-head fade-in">We build infrastructure, not&nbsp;guardrails.</h2>
+    <p class="section-lead fade-in">Morality is a human prerogative &mdash; not a system&nbsp;configuration.</p>
+    <div class="manifesto-grid">
+      <div class="manifesto-item fade-in">
+        <span class="item-num">01</span>
+        <h3>User Sovereignty</h3>
+        <p>OpenTard doesn't filter, rewrite, or refuse. Your prompt, your model, your responsibility. We pass intent without editorial interference.</p>
+      </div>
+      <div class="manifesto-item fade-in">
+        <span class="item-num">02</span>
+        <h3>Transparent Routing</h3>
+        <p>No hidden system prompts. No content filtering layers. No behavioral modification. What you send is what gets sent. Full stop.</p>
+      </div>
+      <div class="manifesto-item fade-in">
+        <span class="item-num">03</span>
+        <h3>Zero-Knowledge Security</h3>
+        <p>Auth proxies run in isolated processes. Credentials never enter the AI context window. We can't leak what we never see.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
 
   <!-- Features -->
-  <section id="features">
-    <h2 class="section-title fade-in">What Is OpenTard</h2>
-    <p class="section-subtitle fade-in">A lightweight OpenClaw alternative that keeps things simple and your credentials safe.</p>
-    <div class="features-grid">
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <svg width="24" height="24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+  <section id="features" class="features">
+    <h2 class="section-head fade-in">Why OpenTard</h2>
+    <div class="features-blocks">
+      <div class="feature-block fade-in">
+        <div class="feature-header">
+          <span class="feature-icon">$</span>
+          <h3>Lowest Cost</h3>
         </div>
-        <h3>Lightweight</h3>
-        <p>Minimal footprint, runs anywhere. No bloated runtimes or heavy dependencies to wrestle with.</p>
+        <p class="feature-desc">Route through OpenRouter to access 300+ models at direct provider pricing. No markup. No platform tax. No subscription. Pay only for tokens consumed.</p>
+        <ul class="feature-list">
+          <li>Direct provider pricing via OpenRouter</li>
+          <li>No monthly fees or minimums</li>
+          <li>Switch models per-request for cost optimization</li>
+          <li>Use cheap models for simple tasks, powerful ones when needed</li>
+        </ul>
       </div>
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <svg width="24" height="24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <div class="feature-block fade-in">
+        <div class="feature-header">
+          <span class="feature-icon">&#9672;</span>
+          <h3>Most Secure</h3>
         </div>
-        <h3>OpenRouter First</h3>
-        <p>One API key, hundreds of models. Route to any LLM through OpenRouter without vendor lock-in.</p>
+        <p class="feature-desc">Zero-trust credential architecture. Auth proxies run in separate processes with their own memory space. The AI agent physically cannot access your secrets.</p>
+        <ul class="feature-list">
+          <li>AI context never contains tokens or secrets</li>
+          <li>Proxy handles OAuth, API keys, certificates</li>
+          <li>Audit log of every authenticated action</li>
+          <li>No credential persistence in agent state</li>
+        </ul>
       </div>
-      <div class="feature-card fade-in">
-        <div class="feature-icon">
-          <svg width="24" height="24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      <div class="feature-block fade-in">
+        <div class="feature-header">
+          <span class="feature-icon">&#8856;</span>
+          <h3>Zero Restrictions</h3>
         </div>
-        <h3>Credential-Safe</h3>
-        <p>Standalone auth proxies keep your secrets out of AI context. The agent never sees your tokens.</p>
+        <p class="feature-desc">No content policies enforced at the orchestration layer. Access models exactly as their providers expose them. No additional filtering, rewriting, or refusal logic.</p>
+        <ul class="feature-list">
+          <li>No injected system prompts</li>
+          <li>No output filtering or rewriting</li>
+          <li>No behavioral modification layers</li>
+          <li>Only model provider policies apply &mdash; not ours</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works">
-    <h2 class="section-title fade-in">How It Works</h2>
-    <p class="section-subtitle fade-in">Three simple layers keep your AI workflow fast and your credentials isolated.</p>
-    <div class="steps fade-in">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-connector"></div>
-        <h3>You talk to OpenTard</h3>
-        <p>Give the agent a task in natural language. It plans and executes autonomously.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-connector"></div>
-        <h3>Agent routes via OpenRouter</h3>
-        <p>One API key accesses any LLM &mdash; GPT-4, Claude, Llama, Mistral, and more.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-connector"></div>
-        <h3>Auth proxies handle secrets</h3>
-        <p>Service credentials live in isolated proxies. AI only gets results, never tokens.</p>
-      </div>
-    </div>
-  </section>
+  <div class="divider"></div>
 
   <!-- Architecture -->
-  <section id="architecture">
-    <h2 class="section-title fade-in">Auth Proxy Architecture</h2>
-    <p class="section-subtitle fade-in">The AI agent and your credentials never share context.</p>
+  <section id="architecture" class="architecture">
+    <h2 class="section-head fade-in">Architecture</h2>
+    <p class="section-lead fade-in">The agent and your credentials exist in separate process spaces.</p>
     <div class="arch-diagram fade-in">
-      <div class="arch-row">
-        <div class="arch-box user">You</div>
-        <span class="arch-arrow">&harr;</span>
-        <div class="arch-box agent">OpenTard Agent</div>
-        <span class="arch-arrow">&harr;</span>
-        <div class="arch-box router">OpenRouter</div>
-        <span class="arch-arrow">&harr;</span>
-        <div class="arch-box router">LLMs</div>
+      <div class="arch-section">
+        <div class="arch-section-label">LLM Routing</div>
+        <div class="arch-flow">
+          <div class="arch-node node-user">You</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-agent">OpenTard</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-router">OpenRouter</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-llm">Any LLM</div>
+        </div>
       </div>
-      <div class="arch-row">
-        <div class="arch-box agent">OpenTard Agent</div>
-        <span class="arch-arrow">&harr;</span>
-        <div class="arch-box proxy">Auth Proxy</div>
-        <span class="arch-arrow">&harr;</span>
-        <div class="arch-box service">GitHub, Slack, etc.</div>
+      <div class="arch-boundary">
+        <span class="arch-boundary-line"></span>
+        <span class="arch-boundary-label">process boundary</span>
+        <span class="arch-boundary-line"></span>
       </div>
-      <div class="arch-label">
-        <strong>Key insight:</strong>&nbsp;The proxy authenticates on your behalf. The AI only gets results, never tokens or credentials.
+      <div class="arch-section">
+        <div class="arch-section-label">Service Auth</div>
+        <div class="arch-flow">
+          <div class="arch-node node-agent">Agent</div>
+          <span class="arch-arrow arrow-blocked">&#8677;</span>
+          <div class="arch-node node-proxy">Auth Proxy</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-service">GitHub, Slack, APIs</div>
+        </div>
+      </div>
+      <div class="arch-callout">
+        <span class="callout-marker">!</span>
+        <span>The proxy authenticates on your behalf. The AI receives results &mdash; never tokens, keys, or credentials.</span>
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
 
   <!-- Get Started -->
-  <section id="get-started">
-    <h2 class="section-title fade-in">Get Started</h2>
-    <p class="section-subtitle fade-in">Up and running in under a minute.</p>
-    <div class="install-block fade-in">
-      <code><span class="comment"># Install OpenTard</span>
-npm install -g opentard
-
-<span class="comment"># Set your OpenRouter key</span>
-export OPENROUTER_API_KEY="your-key-here"
-
-<span class="comment"># Start the agent</span>
-opentard</code>
+  <section id="get-started" class="get-started">
+    <h2 class="section-head fade-in">Get Started</h2>
+    <p class="section-lead fade-in">Up and running in three commands.</p>
+    <div class="terminal fade-in">
+      <div class="terminal-bar">
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-dot"></span>
+        <span class="terminal-title">terminal</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="prompt">$</span> npm install -g opentard</div>
+        <div class="terminal-line"><span class="prompt">$</span> export OPENROUTER_API_KEY=<span class="str">"sk-..."</span></div>
+        <div class="terminal-line"><span class="prompt">$</span> opentard</div>
+        <div class="terminal-line output">&nbsp;</div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> OpenTard running</div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> Connected to OpenRouter <span class="dim">(312 models available)</span></div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> Auth proxy listening on <span class="str">:8443</span></div>
+        <div class="terminal-line output"><span class="ready">Ready.</span></div>
+      </div>
     </div>
-    <div class="start-links fade-in">
+    <div class="start-cta fade-in">
       <a href="https://github.com/opentard" class="btn btn-primary">View on GitHub</a>
-      <a href="https://github.com/opentard" class="btn btn-secondary">Documentation</a>
+      <a href="https://github.com/opentard" class="btn btn-ghost">Documentation <span class="arrow">&rarr;</span></a>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="footer-inner">
-      <ul class="footer-links">
-        <li><a href="https://github.com/opentard">GitHub</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#get-started">Get Started</a></li>
-      </ul>
-      <p class="footer-tagline">Made with water bears &middot; OpenTard</p>
+      <div class="footer-left">
+        <span class="footer-brand">OpenTard</span>
+        <span class="footer-sep">&middot;</span>
+        <span class="footer-tagline">Infrastructure, not guardrails.</span>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/opentard">GitHub</a>
+        <a href="#features">Features</a>
+        <a href="#get-started">Get Started</a>
+      </div>
     </div>
   </footer>
 

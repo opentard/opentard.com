@@ -37,7 +37,7 @@
       float d = distance(gl_PointCoord, vec2(0.5));
       if (d > 0.5) discard;
       float fade = 1.0 - smoothstep(0.2, 0.5, d);
-      gl_FragColor = vec4(0.176, 0.831, 0.749, v_alpha * fade);
+      gl_FragColor = vec4(0.0, 1.0, 0.533, v_alpha * fade);
     }
   `;
 
@@ -90,7 +90,7 @@
     precision mediump float;
     uniform float u_alpha;
     void main() {
-      gl_FragColor = vec4(0.176, 0.831, 0.749, u_alpha);
+      gl_FragColor = vec4(0.0, 1.0, 0.533, u_alpha);
     }
   `;
 

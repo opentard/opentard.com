@@ -14,13 +14,12 @@
     return;
   }
 
-  var isMobile = window.innerWidth < 768;
-  var size = isMobile ? 280 : 400;
   var dpr = Math.min(window.devicePixelRatio || 1, 2);
-  canvas.width = Math.round(size * dpr);
-  canvas.height = Math.round(size * dpr);
-  canvas.style.width = size + 'px';
-  canvas.style.height = size + 'px';
+  var rect = canvas.getBoundingClientRect();
+  var displayW = rect.width > 0 ? rect.width : 340;
+  var displayH = rect.height > 0 ? rect.height : 340;
+  canvas.width = Math.round(displayW * dpr);
+  canvas.height = Math.round(displayH * dpr);
 
   // --- Shaders ---
   var vertSrc = [
@@ -215,13 +214,13 @@
     '      sp *= 3.0;',
     '    } else {',
     '      // Body: translucent teal with depth variation',
-    '      col = vec3(0.08, 0.38, 0.36);',
+    '      col = vec3(0.0, 0.5, 0.27);',
     '      // Add subtle warm undertone in thicker areas',
-    '      col += vec3(0.04, 0.02, 0.0) * (1.0 - rim);',
+    '      col += vec3(0.02, 0.04, 0.0) * (1.0 - rim);',
     '    }',
     '',
-    '    vec3 rimCol = vec3(0.18, 0.83, 0.75);',
-    '    vec3 specCol = vec3(0.85, 1.0, 0.95);',
+    '    vec3 rimCol = vec3(0.0, 1.0, 0.533);',
+    '    vec3 specCol = vec3(0.7, 1.0, 0.85);',
     '',
     '    vec3 c = col * (0.2 + d1 * 0.55 * sh + d2 * 0.18) * ao;',
     '    c += sp * 0.35 * specCol * sh;',
