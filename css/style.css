@@ -168,6 +168,7 @@ section {
   line-height: 1.2;
   color: var(--text);
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .section-lead {
@@ -176,6 +177,9 @@ section {
   line-height: 1.7;
   margin-bottom: 3rem;
   max-width: 600px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .divider {
@@ -357,6 +361,8 @@ section {
 .manifesto .section-head {
   font-size: 2.5rem;
   max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .manifesto-grid {
@@ -395,6 +401,10 @@ section {
 }
 
 /* === Features === */
+.features .section-head {
+  margin-bottom: 2.5rem;
+}
+
 .features-blocks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -493,6 +503,7 @@ section {
   text-transform: uppercase;
   color: var(--text-dim);
   margin-bottom: 0.75rem;
+  text-align: center;
 }
 
 .arch-flow {
@@ -574,8 +585,6 @@ section {
 
 /* === Terminal / Get Started === */
 .get-started { text-align: center; }
-.get-started .section-head { text-align: center; }
-.get-started .section-lead { margin-left: auto; margin-right: auto; text-align: center; }
 
 .terminal {
   background: #080808;
@@ -777,9 +786,9 @@ footer {
 
   .stat-value, .stat-plus { font-size: 1.6rem; }
 
+  .section-head { font-size: 1.6rem; }
   .manifesto .section-head { font-size: 1.8rem; }
   .manifesto-grid { grid-template-columns: 1fr; }
-  .section-head { font-size: 1.6rem; }
 
   .features-blocks { grid-template-columns: 1fr; }
 
