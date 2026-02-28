@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" width="200" height="160">
+  <!-- Body -->
+  <ellipse cx="100" cy="75" rx="50" ry="38" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="2"/>
+  <!-- Body segments -->
+  <ellipse cx="100" cy="75" rx="50" ry="38" fill="none" stroke="#2dd4bf" stroke-width="0.5" opacity="0.4"/>
+  <path d="M68 55 Q100 50 132 55" fill="none" stroke="#2dd4bf" stroke-width="0.5" opacity="0.3"/>
+  <path d="M65 70 Q100 65 135 70" fill="none" stroke="#2dd4bf" stroke-width="0.5" opacity="0.3"/>
+  <path d="M65 82 Q100 87 135 82" fill="none" stroke="#2dd4bf" stroke-width="0.5" opacity="0.3"/>
+  <!-- Head -->
+  <ellipse cx="100" cy="42" rx="18" ry="15" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="2"/>
+  <!-- Eyes -->
+  <circle cx="93" cy="39" r="3" fill="#e2e8f0"/>
+  <circle cx="107" cy="39" r="3" fill="#e2e8f0"/>
+  <circle cx="94" cy="38" r="1.2" fill="#0a0e17"/>
+  <circle cx="108" cy="38" r="1.2" fill="#0a0e17"/>
+  <!-- Smile -->
+  <path d="M95 46 Q100 50 105 46" fill="none" stroke="#2dd4bf" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Front left legs -->
+  <path d="M62 58 L42 45 L38 42" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="38" cy="42" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <path d="M58 70 L38 63 L33 61" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="33" cy="61" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <!-- Back left legs -->
+  <path d="M58 82 L38 88 L33 91" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="33" cy="91" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <path d="M65 93 L48 108 L44 113" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="44" cy="113" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <!-- Front right legs -->
+  <path d="M138 58 L158 45 L162 42" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="162" cy="42" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <path d="M142 70 L162 63 L167 61" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="167" cy="61" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <!-- Back right legs -->
+  <path d="M142 82 L162 88 L167 91" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="167" cy="91" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <path d="M135 93 L152 108 L156 113" fill="none" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="156" cy="113" r="3" fill="#1a3a4a" stroke="#2dd4bf" stroke-width="1.5"/>
+  <!-- Body highlight -->
+  <ellipse cx="90" cy="65" rx="20" ry="10" fill="#2dd4bf" opacity="0.06"/>
+</svg>
