@@ -12,8 +12,11 @@
   --accent-glow: rgba(0, 255, 136, 0.25);
   --red: #ff3333;
   --text: #d4d4d4;
-  --text-muted: #666;
-  --text-dim: #3a3a3a;
+  /* Both of these carry body copy, so both must clear WCAG AA (4.5:1) on --bg.
+     The previous values were #666 (3.55:1) and #3a3a3a (1.79:1) — the latter was
+     effectively unreadable. These keep the same hierarchy at 7.15:1 and 4.75:1. */
+  --text-muted: #999999;
+  --text-dim: #7a7a7a;
   --font-display: 'Syne', sans-serif;
   --font-body: 'Outfit', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -744,11 +747,19 @@ footer {
     padding: 5rem 2rem 2rem;
     gap: 1.5rem;
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    /* visibility (not just transform) takes the closed menu out of the tab order — otherwise
+       keyboard users tab through links that are off-screen and invisible. Delaying it by the
+       slide duration keeps the close animation intact. */
+    visibility: hidden;
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
     border-left: 1px solid var(--border);
   }
 
-  .nav-links.open { transform: translateX(0); }
+  .nav-links.open {
+    transform: translateX(0);
+    visibility: visible;
+    transition: transform 0.3s ease, visibility 0s linear 0s;
+  }
 
   section { padding: 4rem 1.25rem; }
 
@@ -809,4 +820,24 @@ footer {
   .hero-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
   .stat-value, .stat-plus { font-size: 1.4rem; }
   .btn { padding: 0.65rem 1.25rem; font-size: 0.78rem; }
+}
+
+/* Respect prefers-reduced-motion: this page runs two WebGL loops, a fade-in observer, a counter
+   animation, and an infinite glow pulse. Visitors who ask the OS to reduce motion get the same
+   layout without any of it. (The JS loops check the same query and render a single frame.) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* fade-in elements are opacity:0 until observed — never leave them invisible. */
+  .fade-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

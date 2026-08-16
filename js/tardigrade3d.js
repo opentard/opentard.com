@@ -298,8 +298,39 @@
     gl.uniform2f(uRes, canvas.width, canvas.height);
     gl.drawArrays(gl.TRIANGLES, 0, 6);
 
+    // Reduced motion: draw one frame and stop. Hidden tab: stop until it comes back.
+    if (!reduceMotion && !document.hidden) {
+      requestAnimationFrame(render);
+    } else {
+      running = false;
+    }
+  }
+
+  var reduceMotionQuery = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : null;
+  var reduceMotion = reduceMotionQuery ? reduceMotionQuery.matches : false;
+
+  // A hidden document keeps the frame callback queued by the last visible frame. Restarting on
+  // visibilitychange without this guard would leave that pending callback running alongside the
+  // new one, adding a concurrent chain on every hide/show cycle.
+  var running = false;
+
+  function start() {
+    if (running || reduceMotion || document.hidden) return;
+    running = true;
     requestAnimationFrame(render);
   }
 
+  if (reduceMotionQuery && reduceMotionQuery.addEventListener) {
+    reduceMotionQuery.addEventListener('change', function (e) {
+      reduceMotion = e.matches;
+      start();
+    });
+  }
+
+  document.addEventListener('visibilitychange', start);
+
+  running = true;
   render();
 })();

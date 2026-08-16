@@ -193,8 +193,40 @@
 
     gl.drawArrays(gl.POINTS, 0, PARTICLE_COUNT);
 
+    // Reduced motion: render the field once and leave it still. Also stop the loop while the tab
+    // is hidden — rAF is throttled but not guaranteed to stop, and this is a GPU-backed loop.
+    if (!reduceMotion && !document.hidden) {
+      requestAnimationFrame(animate);
+    } else {
+      running = false;
+    }
+  }
+
+  const reduceMotionQuery = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)')
+    : null;
+  let reduceMotion = reduceMotionQuery ? reduceMotionQuery.matches : false;
+
+  // A hidden document still holds the frame callback queued by the last visible frame. Restarting
+  // on visibilitychange without this guard leaves that pending callback *and* the new one running,
+  // so every hide/show cycle adds another concurrent chain.
+  let running = false;
+
+  function start() {
+    if (running || reduceMotion || document.hidden) return;
+    running = true;
     requestAnimationFrame(animate);
   }
 
+  if (reduceMotionQuery && reduceMotionQuery.addEventListener) {
+    reduceMotionQuery.addEventListener('change', function (e) {
+      reduceMotion = e.matches;
+      start();
+    });
+  }
+
+  document.addEventListener('visibilitychange', start);
+
+  running = true;
   animate();
 })();

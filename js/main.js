@@ -4,26 +4,56 @@
   var navLinks = document.querySelector('.nav-links');
 
   if (toggle && navLinks) {
+    var setMenu = function (open) {
+      navLinks.classList.toggle('open', open);
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    };
+
     toggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-      toggle.classList.toggle('open');
+      setMenu(!navLinks.classList.contains('open'));
     });
 
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('open');
+        setMenu(false);
       });
+    });
+
+    // Escape closes the menu and returns focus to the control that opened it.
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+        setMenu(false);
+        toggle.focus();
+      }
     });
   }
 
-  // Smooth scroll for anchor links
+  var prefersReducedMotion = window.matchMedia
+    ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    : false;
+
+  // Smooth scroll for anchor links. The logo is href="#", and querySelector('#') throws a
+  // SyntaxError — so only look up hrefs that actually name a target.
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var href = this.getAttribute('href');
+      if (!href || href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        return;
+      }
+
+      var target = null;
+      try {
+        target = document.querySelector(href);
+      } catch (err) {
+        return; // not a valid selector — let the browser handle the link
+      }
+
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
       }
     });
   });
@@ -65,6 +95,13 @@
         if (entry.isIntersecting) {
           var el = entry.target;
           var target = parseInt(el.getAttribute('data-count'), 10);
+          counterObserver.unobserve(el);
+
+          if (prefersReducedMotion || isNaN(target)) {
+            el.textContent = isNaN(target) ? el.textContent : target;
+            return;
+          }
+
           var duration = 1400;
           var start = performance.now();
 
@@ -76,7 +113,6 @@
           }
 
           requestAnimationFrame(update);
-          counterObserver.unobserve(el);
         }
       });
     }, { threshold: 0.5 });

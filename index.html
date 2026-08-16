@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenTard — Uncensored AI Agent Orchestration</title>
-  <meta name="description" content="The uncensored autonomous AI orchestration layer. Route to 300+ LLMs via OpenRouter at zero markup. Auth proxies keep credentials out of AI context.">
+  <meta name="description" content="A self-hosted, uncensored AI agent stack. Drive an AI agent from WhatsApp over MCP, and run your own uncensored model with the bundled llama.cpp server.">
   <meta property="og:title" content="OpenTard — Uncensored AI Agent Orchestration">
-  <meta property="og:description" content="Orchestrate any model. Zero censorship. Zero waste. Your models, your rules.">
+  <meta property="og:description" content="Run your own model. Zero censorship. Zero platform tax. Your hardware, your rules.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://opentard.com">
+  <meta property="og:image" content="https://opentard.com/img/social-preview.png">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="640">
+  <meta property="og:image:alt" content="OpenTard — a tardigrade in space">
+  <meta property="og:site_name" content="OpenTard">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenTard — Uncensored AI Agent Orchestration">
+  <meta name="twitter:description" content="Run your own model. Zero censorship. Zero platform tax. Your hardware, your rules.">
+  <meta name="twitter:image" content="https://opentard.com/img/social-preview.png">
+  <link rel="canonical" href="https://opentard.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -31,14 +41,14 @@
         <span class="logo-text">OpenTard</span>
         <span class="logo-ver">v0.1</span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#manifesto">Manifesto</a></li>
         <li><a href="#features">Features</a></li>
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#get-started">Get Started</a></li>
         <li><a href="https://github.com/opentard" class="nav-gh">GitHub &#8599;</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -47,8 +57,8 @@
     <div class="hero-grid">
       <div class="hero-content">
         <div class="hero-badge">AUTONOMOUS AI ORCHESTRATION</div>
-        <h1>Orchestrate Any&nbsp;Model.<br><span class="gl">Zero Censorship.</span><br>Zero Waste.</h1>
-        <p class="hero-sub">The uncensored agentic AI layer. Route to 300+ LLMs through OpenRouter at bare-metal pricing. Standalone auth proxies keep credentials completely out of AI context.</p>
+        <h1>Run Your Own&nbsp;Model.<br><span class="gl">Zero Censorship.</span><br>Zero Platform Tax.</h1>
+        <p class="hero-sub">A self-hosted, uncensored AI agent stack. Drive an AI agent from WhatsApp through an MCP tool server, and serve an uncensored model on your own GPU with the bundled llama.cpp image. You run every piece; you choose the model endpoint.</p>
         <div class="hero-cta">
           <a href="#get-started" class="btn btn-primary">Get Started</a>
           <a href="https://github.com/opentard" class="btn btn-ghost">View on GitHub <span class="arrow">&rarr;</span></a>
@@ -61,8 +71,8 @@
     </div>
     <div class="hero-stats">
       <div class="stat fade-in">
-        <span class="stat-value" data-count="300">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Models</span>
+        <span class="stat-value" data-count="15">0</span>
+        <span class="stat-label">MCP Tools</span>
       </div>
       <div class="stat fade-in">
         <span class="stat-value">$0</span>
@@ -74,7 +84,7 @@
       </div>
       <div class="stat fade-in">
         <span class="stat-value">100%</span>
-        <span class="stat-label">Credential Isolation</span>
+        <span class="stat-label">Self-Hosted</span>
       </div>
     </div>
   </section>
@@ -93,13 +103,13 @@
       </div>
       <div class="manifesto-item fade-in">
         <span class="item-num">02</span>
-        <h3>Transparent Routing</h3>
-        <p>No hidden system prompts. No content filtering layers. No behavioral modification. What you send is what gets sent. Full stop.</p>
+        <h3>Your Prompt, Not Ours</h3>
+        <p>The agent's system prompt is a config value you own and can read in full. No vendor filtering layer, no output rewriting, no behavioural patch you didn't write.</p>
       </div>
       <div class="manifesto-item fade-in">
         <span class="item-num">03</span>
-        <h3>Zero-Knowledge Security</h3>
-        <p>Auth proxies run in isolated processes. Credentials never enter the AI context window. We can't leak what we never see.</p>
+        <h3>No Middleman</h3>
+        <p>The agent, message bridge and storage all run on your machine, and the model endpoint is whichever one you configure &mdash; the Claude API by default, or your own llama.cpp server. There is no OpenTard service in the path. We can't leak what we never receive.</p>
       </div>
     </div>
   </section>
@@ -115,25 +125,25 @@
           <span class="feature-icon">$</span>
           <h3>Lowest Cost</h3>
         </div>
-        <p class="feature-desc">Route through OpenRouter to access 300+ models at direct provider pricing. No markup. No platform tax. No subscription. Pay only for tokens consumed.</p>
+        <p class="feature-desc">Serve the model yourself on hardware you already own. No markup, no platform tax, no subscription, no per-token bill at all when you run locally.</p>
         <ul class="feature-list">
-          <li>Direct provider pricing via OpenRouter</li>
-          <li>No monthly fees or minimums</li>
-          <li>Switch models per-request for cost optimization</li>
-          <li>Use cheap models for simple tasks, powerful ones when needed</li>
+          <li>llama.cpp server with the model baked into the image</li>
+          <li>No monthly fees, minimums, or seat counts</li>
+          <li>OpenAI-compatible API &mdash; point existing clients straight at it</li>
+          <li>Or plug in a hosted API when you want a frontier model</li>
         </ul>
       </div>
       <div class="feature-block fade-in">
         <div class="feature-header">
           <span class="feature-icon">&#9672;</span>
-          <h3>Most Secure</h3>
+          <h3>Yours End to End</h3>
         </div>
-        <p class="feature-desc">Zero-trust credential architecture. Auth proxies run in separate processes with their own memory space. The AI agent physically cannot access your secrets.</p>
+        <p class="feature-desc">Self-hosted from the model up. Services bind to loopback by default, the WhatsApp session lives in a volume you control, and prompts never transit a third party you didn't configure.</p>
         <ul class="feature-list">
-          <li>AI context never contains tokens or secrets</li>
-          <li>Proxy handles OAuth, API keys, certificates</li>
-          <li>Audit log of every authenticated action</li>
-          <li>No credential persistence in agent state</li>
+          <li>Runs entirely in your own Docker stack</li>
+          <li>Agent stack binds to loopback by default</li>
+          <li>Sender allowlist gates who can drive the agent</li>
+          <li>Shell tool ships disabled &mdash; opt in deliberately</li>
         </ul>
       </div>
       <div class="feature-block fade-in">
@@ -141,12 +151,12 @@
           <span class="feature-icon">&#8856;</span>
           <h3>Zero Restrictions</h3>
         </div>
-        <p class="feature-desc">No content policies enforced at the orchestration layer. Access models exactly as their providers expose them. No additional filtering, rewriting, or refusal logic.</p>
+        <p class="feature-desc">No content policy is enforced by this stack. Run an uncensored model and you get it exactly as its weights behave &mdash; no filtering, rewriting, or refusal logic bolted on top.</p>
         <ul class="feature-list">
-          <li>No injected system prompts</li>
-          <li>No output filtering or rewriting</li>
-          <li>No behavioral modification layers</li>
-          <li>Only model provider policies apply &mdash; not ours</li>
+          <li>No filtering or rewriting layer</li>
+          <li>System prompt is yours to set or clear</li>
+          <li>Default image ships an uncensored Qwen3.5 build</li>
+          <li>Only your model's own behaviour applies &mdash; not our policy</li>
         </ul>
       </div>
     </div>
@@ -157,38 +167,43 @@
   <!-- Architecture -->
   <section id="architecture" class="architecture">
     <h2 class="section-head fade-in">Architecture</h2>
-    <p class="section-lead fade-in">The agent and your credentials exist in separate process spaces.</p>
+    <p class="section-lead fade-in">The agent stack runs on your machine and calls the Claude API. The llama.cpp server is a separate, self-hosted endpoint you can run alongside it for fully local inference.</p>
     <div class="arch-diagram fade-in">
       <div class="arch-section">
-        <div class="arch-section-label">LLM Routing</div>
+        <div class="arch-section-label">Inference</div>
         <div class="arch-flow">
           <div class="arch-node node-user">You</div>
           <span class="arch-arrow">&rarr;</span>
-          <div class="arch-node node-agent">OpenTard</div>
+          <div class="arch-node node-agent">tard agent</div>
           <span class="arch-arrow">&rarr;</span>
-          <div class="arch-node node-router">OpenRouter</div>
+          <div class="arch-node node-router">Claude API</div>
+        </div>
+        <div class="arch-flow">
+          <div class="arch-node node-user">OpenAI-compatible client</div>
           <span class="arch-arrow">&rarr;</span>
-          <div class="arch-node node-llm">Any LLM</div>
+          <div class="arch-node node-router">llama.cpp</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-llm">Your GPU</div>
         </div>
       </div>
       <div class="arch-boundary">
         <span class="arch-boundary-line"></span>
-        <span class="arch-boundary-label">process boundary</span>
+        <span class="arch-boundary-label">your machine</span>
         <span class="arch-boundary-line"></span>
       </div>
       <div class="arch-section">
-        <div class="arch-section-label">Service Auth</div>
+        <div class="arch-section-label">Messaging</div>
         <div class="arch-flow">
           <div class="arch-node node-agent">Agent</div>
-          <span class="arch-arrow arrow-blocked">&#8677;</span>
-          <div class="arch-node node-proxy">Auth Proxy</div>
           <span class="arch-arrow">&rarr;</span>
-          <div class="arch-node node-service">GitHub, Slack, APIs</div>
+          <div class="arch-node node-proxy">ot-wap (MCP)</div>
+          <span class="arch-arrow">&rarr;</span>
+          <div class="arch-node node-service">WhatsApp</div>
         </div>
       </div>
       <div class="arch-callout">
         <span class="callout-marker">!</span>
-        <span>The proxy authenticates on your behalf. The AI receives results &mdash; never tokens, keys, or credentials.</span>
+        <span>15 MCP tools expose WhatsApp to the agent &mdash; send, receive, groups, media. The session is linked once by QR and stored in a volume you own.</span>
       </div>
     </div>
   </section>
@@ -198,7 +213,7 @@
   <!-- Get Started -->
   <section id="get-started" class="get-started">
     <h2 class="section-head fade-in">Get Started</h2>
-    <p class="section-lead fade-in">Up and running in three commands.</p>
+    <p class="section-lead fade-in">Clone the repos side by side, set a key and a webhook secret, then bring the stack up with Docker.</p>
     <div class="terminal fade-in">
       <div class="terminal-bar">
         <span class="terminal-dot"></span>
@@ -207,13 +222,15 @@
         <span class="terminal-title">terminal</span>
       </div>
       <div class="terminal-body">
-        <div class="terminal-line"><span class="prompt">$</span> npm install -g opentard</div>
-        <div class="terminal-line"><span class="prompt">$</span> export OPENROUTER_API_KEY=<span class="str">"sk-..."</span></div>
-        <div class="terminal-line"><span class="prompt">$</span> opentard</div>
+        <div class="terminal-line"><span class="prompt">$</span> git clone https://github.com/opentard/apex &amp;&amp; git clone https://github.com/opentard/wap</div>
+        <div class="terminal-line"><span class="prompt">$</span> echo <span class="str">"ANTHROPIC_API_KEY=sk-ant-api..."</span> &gt;&gt; apex/.env</div>
+        <div class="terminal-line"><span class="prompt">$</span> echo <span class="str">"WAP_WEBHOOK_TOKEN=$(openssl rand -hex 32)"</span> &gt;&gt; apex/.env</div>
+        <div class="terminal-line"><span class="prompt">$</span> cd apex &amp;&amp; docker compose up --build</div>
         <div class="terminal-line output">&nbsp;</div>
-        <div class="terminal-line output"><span class="ok">&#9679;</span> OpenTard running</div>
-        <div class="terminal-line output"><span class="ok">&#9679;</span> Connected to OpenRouter <span class="dim">(312 models available)</span></div>
-        <div class="terminal-line output"><span class="ok">&#9679;</span> Auth proxy listening on <span class="str">:8443</span></div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> wa-bridge listening <span class="dim">(internal)</span></div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> ot-wap MCP server on <span class="str">127.0.0.1:8080</span></div>
+        <div class="terminal-line output"><span class="ok">&#9679;</span> tard dashboard on <span class="str">127.0.0.1:5000</span></div>
+        <div class="terminal-line output"><span class="dim">Scan the QR from the GetWhatsAppQrCode tool to link.</span></div>
         <div class="terminal-line output"><span class="ready">Ready.</span></div>
       </div>
     </div>
